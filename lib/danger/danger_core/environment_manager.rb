@@ -26,6 +26,7 @@ module Danger
     end
 
     def initialize(env, ui = nil, danger_id = "danger")
+      puts("*******************************************000")
       ci_klass = self.class.local_ci_source(env)
       self.ci_source = ci_klass.new(env)
       self.ui = ui || Cork::Board.new(silent: false, verbose: false)

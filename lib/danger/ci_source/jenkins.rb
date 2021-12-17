@@ -79,14 +79,16 @@ module Danger
       
       puts env
       self.repo_url = self.class.repo_url(env)
+      print("0------------0")
+      puts self.repo_url
+      
       self.pull_request_id = self.class.pull_request_id(env)
       self.repo_slug = self.class.repo_slug(self.repo_url)
       self.project_url = env["CI_MERGE_REQUEST_PROJECT_URL"] || env["CI_PROJECT_URL"]
-      print("0------------0")
-      puts self.repo_url
-      puts self.pull_request_id
-      puts self.repo_slug
-      puts self.project_url
+      
+#       puts self.pull_request_id
+#       puts self.repo_slug
+#       puts self.project_url
     end
 
     def self.repo_slug(repo_url)

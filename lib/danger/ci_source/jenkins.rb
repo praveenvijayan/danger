@@ -76,7 +76,7 @@ module Danger
 
     def initialize(env)
       raise EnvNotFound.new if env.nil? || env.empty?
-
+      print("0------------0")
       self.repo_url = self.class.repo_url(env)
       self.pull_request_id = self.class.pull_request_id(env)
       self.repo_slug = self.class.repo_slug(self.repo_url)

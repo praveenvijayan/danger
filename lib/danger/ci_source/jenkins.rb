@@ -88,6 +88,9 @@ module Danger
       slug = self.slug_http(repo_url) unless slug
       slug = self.slug_bitbucket(repo_url) unless slug
       slug = self.slug_fallback(repo_url) unless slug
+      print("*00--------")
+      print(slug)
+      print("*00-*********")
       return slug.gsub(/\.git$/, "") unless slug.nil?
     end
 
@@ -125,8 +128,6 @@ module Danger
 
     def self.repo_url(env)
       print(env["GITLAB_URL"])
-      print("*****************")
-      print(env["GIT_URL_1"])
       print("*****************")
       if env["GIT_URL_1"]
         env["GIT_URL_1"]

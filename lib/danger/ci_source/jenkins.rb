@@ -83,6 +83,9 @@ module Danger
       puts self.repo_url
       
       self.pull_request_id = self.class.pull_request_id(env)
+      print("9099090")
+      puts self.pull_request_id
+      print("8876")
       self.repo_slug = self.class.repo_slug(self.repo_url)
       self.project_url = env["CI_MERGE_REQUEST_PROJECT_URL"] || env["CI_PROJECT_URL"]
       

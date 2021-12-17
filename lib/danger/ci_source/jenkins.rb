@@ -124,7 +124,9 @@ module Danger
     end
 
     def self.repo_url(env)
-      print(env)
+      print(env["GITLAB_URL"])
+      print("*****************")
+      print(env["GIT_URL_1"])
       print("*****************")
       if env["GIT_URL_1"]
         env["GIT_URL_1"]

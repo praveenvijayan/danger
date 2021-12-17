@@ -126,8 +126,8 @@ module Danger
     def self.repo_url(env)
       if env["GIT_URL_1"]
         env["GIT_URL_1"]
-      elsif env["CHANGE_URL"]
-        change_url = env["CHANGE_URL"]
+      elsif env["GITLAB_URL"]
+        change_url = env["GITLAB_URL"]
         case change_url
         when %r{\/pull\/} # GitHub
           matches = change_url.match(%r{(.+)\/pull\/[0-9]+})
